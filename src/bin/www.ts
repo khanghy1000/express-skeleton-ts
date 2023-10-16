@@ -4,17 +4,17 @@
  * Module dependencies.
  */
 
-import app from '../app';
-import debugFactory from 'debug';
-const debug = debugFactory('template:server');
-import http from 'http';
+import app from "../app";
+import debugFactory from "debug";
+const debug = debugFactory("app:server");
+import http from "http";
 
 /**
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
+const port = normalizePort(process.env.PORT || "3000");
+app.set("port", port);
 
 /**
  * Create HTTP server.
@@ -27,27 +27,27 @@ const server = http.createServer(app);
  */
 
 server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+server.on("error", onError);
+server.on("listening", onListening);
 
 /**
  * Normalize a port into a number, string, or false.
  */
 
 function normalizePort(val: string) {
-	const port = parseInt(val, 10);
+    const port = parseInt(val, 10);
 
-	if (isNaN(port)) {
-		// named pipe
-		return val;
-	}
+    if (isNaN(port)) {
+        // named pipe
+        return val;
+    }
 
-	if (port >= 0) {
-		// port number
-		return port;
-	}
+    if (port >= 0) {
+        // port number
+        return port;
+    }
 
-	return false;
+    return false;
 }
 
 /**
@@ -81,9 +81,13 @@ function onError(error: { syscall: string; code: any }) {
  */
 
 function onListening() {
-	const addr = server.address();
-	if (addr != null) {
-		const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
-		debug('Listening on ' + bind);
-	}
+    const addr = server.address();
+    if (addr != null) {
+        const bind =
+            typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
+        debug("Listening on " + bind);
+    }
+    if (typeof addr !== "string") {
+        debug(`http://localhost:${port}/`);
+    }
 }
