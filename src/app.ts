@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 import logger from "morgan";
 import "dotenv/config";
 
-import indexRouter from "./routes/index.ts";
+import indexRouter from "./routes/index";
 
 const app = express();
 

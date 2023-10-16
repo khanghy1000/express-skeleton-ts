@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-import app from '../app.ts';
+import app from '../app';
 import debugFactory from 'debug';
 const debug = debugFactory('template:server');
 import http from 'http';
