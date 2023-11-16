@@ -4,7 +4,8 @@
     "private": true,
     "scripts": {
         "start": "ts-node ./src/bin/www.ts",
-        "dev": "DEBUG=app:* nodemon ./src/bin/www.ts"
+        "dev": "DEBUG=app:* nodemon ./src/bin/www.ts",
+        "format": "prettier --write ."
     },
     "dependencies": {
         "bcrypt": "^5.1.1",
