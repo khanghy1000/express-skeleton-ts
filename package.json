@@ -3,8 +3,8 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "start": "ts-node ./src/bin/www.ts",
-        "dev": "DEBUG=app:* nodemon ./src/bin/www.ts",
+        "start": "tsx ./src/bin/www.ts",
+        "dev": "DEBUG=app:* tsx watch ./src/bin/www.ts",
         "format": "prettier --write ."
     },
     "dependencies": {
@@ -30,9 +30,8 @@
         "@typescript-eslint/parser": "^6.7.5",
         "eslint": "^8.51.0",
         "eslint-config-prettier": "^9.0.0",
-        "nodemon": "^3.0.1",
         "prettier": "^3.1.0",
-        "ts-node": "^10.9.1",
+        "tsx": "^4.6.2",
         "typescript": "^5.2.2"
     }
 }
